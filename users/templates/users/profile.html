@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags%}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="box-element" class="profile-container">
+				<img src="{{user.userprofile.image.url}}" id="profile-pic" class='small'>
+				<h2 class="profile-info" >{{user}}</h2>
+				<p class="profile-info">{{user.email}}</p>
+				<form method="POST" style="clear: left;" enctype="multipart/form-data">
+						{% csrf_token %}
+						<fieldset class="form-group">
+							<legend>Profile Details</legend>
+							<p>{{u_form|crispy}}</p>
+							<p>{{p_form|crispy}}</p>
+
+						</fieldset>
+						<div>
+							<button type="submit" class=" btn btn-outline-info" style="margin:2% 0%;">Update</button>
+						</div>
+				</form>	
+			</div>
+		</div>
+		<div class="col-md-4">
+                  
+                  <div class="card" id="hide">
+                    <div class="card-body">
+                      <h4 class="card-title">Blog-Sidebar</h4>
+                      <p class="card-text">You can put any information you like here</p>
+                      <ul class="list-group ">
+                        <li class="list-group-item list-group-item-flush">Latest Post</li>
+                        <li class="list-group-item">Announcement</li>
+                        <li class="list-group-item">Calendar</li>
+                        <li class="list-group-item">Etc</li>
+                      </ul>
+                    </div> 
+                  </div>
+        </div>
+	</div>
+
+</div>
+
+{% endblock %}

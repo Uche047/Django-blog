@@ -1,0 +1,61 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <form class="d-flex mb-2" >
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                <button class="btn btn-success" type="submit" style="background-color: mediumseagreen">Search</button>
+            </form>
+            
+            <article>
+                {% for post in page_obj %}
+                <div class="box-element profile-container">
+
+                    <img src="{{post.author.userprofile.image.url}}" id="profile-pic" class="rounded-circle small">
+                    
+                    <a style="color: maroon" href="{% url 'user-posts' post.author %}">{{post.author}}</a>
+                    <small style="color: white">{{post.date_posted|date:"F-d, Y"}}</small>
+                    <hr style="margin-top: -0.35%;">
+                    <h3 style='margin-top:-2.5%;'><a href="{% url 'post-detail' post.id %}">{{post.title}}</a> </h3>
+                    <p id="unique">{{post.content}}</p>
+                   
+                </div>
+                {% endfor %}
+            </article>
+        </div>
+        
+        <div class="col-md-4">
+                  
+                  <div class="card" id="hide">
+                    <div class="card-body">
+                      <h4 class="card-title">Blog-Sidebar</h4>
+                      <p class="card-text">You can put any information you like here</p>
+                      <ul class="list-group ">
+                        <li class="list-group-item list-group-item-flush">Latest Post</li>
+                        <li class="list-group-item">Announcement</li>
+                        <li class="list-group-item">Calendar</li>
+                        <li class="list-group-item">Etc</li>
+                      </ul>
+                    </div> 
+                  </div>
+        </div>
+    </div>
+    <div style="display:flex;">
+    <div class="current" style="margin-right: 10%;">
+        <small>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</small>
+    </div>
+    {% if page_obj.has_previous %}
+        <a class='btn btn-success btn-sm'  href="?page=1">&laquo; first</a>
+        <a class='btn btn-outline-secondary btn-sm'  href="?page={{ page_obj.previous_page_number }}">previous</a>
+    {% endif %}
+    
+    {% if page_obj.has_next %}
+        <a class='btn btn-outline-secondary btn-sm' href="?page={{ page_obj.next_page_number }}">next</a>
+        <a  class='btn-success btn-sm' href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+    {% endif %}
+</div>
+</div>
+
+
+{% endblock content %}

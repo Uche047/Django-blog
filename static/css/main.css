@@ -1,0 +1,138 @@
+a.navbar-brand {
+    margin-left: 1% !important;
+}
+a {
+    text-decoration: none;
+    margin-right:0.5%;
+}  
+nav {
+    margin-bottom:2% !important;  
+}
+.navbar{
+    /*background-color: darkcyan !important;*/
+    background-color: mediumseagreen !important;
+    width:101% !important;
+}
+/*.container-fluid{
+    margin-left:0% !important;
+}*/
+#navbarCollapse{
+    margin-left:0 !important;
+
+}
+small {
+    font-size: small;
+    color: rgba(105, 105, 105, 0.849) ;
+}
+}
+small a {
+    margin-left: 0.5%;
+}
+h2 a {
+    color:rgba(0, 0, 0, 0.5);
+}
+h3 a {
+    color:rgba(0, 0, 0, 0.5);
+}
+
+h3 a:hover {
+    color: maroon;
+}
+legend {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.185);
+    margin-bottom: 1.5%;
+}
+.meta {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.185);
+    margin-left: 15.5%;
+}
+.box-element {
+	/*background-color: #fff;*/
+	border-radius:4px;
+	padding:14px;
+    box-shadow: 0 0 8px gray;
+    margin-bottom: 3%;
+    background-color: mediumseagreen;
+    color:white;
+}
+.card {
+    background-color: mediumseagreen;
+    color:white;
+}
+.list-group{
+    
+    color: rgba(105, 105, 105, 0.849) ;
+}
+button {
+    margin-top: 0.6%;
+}
+/*
+.profile-container {
+    float:left;
+    width:100%;
+}*/
+#profile-pic {
+    float:left;
+    height:5em;
+    width: 5em;
+    border-radius: 50%;
+    margin-right:2%;  
+    margin-bottom:2%;     
+}
+
+
+
+@media screen and (min-width: 770px){
+    #unique {
+        margin-left:5em;
+        margin-right:5em;
+        color: white;
+    }
+    
+}
+
+@media screen and (min-width: 700px) and (max-width: 775px){
+    .container-fluid{
+        display: flex !important;
+        flex-wrap: inherit !important;
+        align-items: flex-start !important;
+        justify-content: space-between;
+
+    }
+    #navbarCollapse {
+    max-width:750px !important;
+    }
+    #unique {
+        margin-left:5em;
+        margin-right:5em;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 700px){
+    #unique {
+        clear: left;
+        margin-left:0%;
+        margin-right: 0%;
+        color: white;
+    }
+    #hide {
+        display: none ;
+    }
+}/*
+@media screen and (max-width: 600px){
+    #unique2 {
+        margin-left:5em;
+        margin-right: 5em;
+        color: white;
+    }
+}
+@media screen and (min-width: 38em){
+    #unique2 {
+        margin-left:5.5em;
+        margin-right:5em;
+        color: white;
+    }
+}*/
+
+

@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-8">
+			<article>
+			        <div class="box-element" class="profile-container">
+			            <img src="{{object.author.userprofile.image.url}}" id="profile-pic" class="rounded-circle small">
+			            
+			            <a style="color:white;" href="#">{{object.author}}</a>
+			            <small style="color:white;">{{object.date_posted|date:"F-d, Y"}}</small>
+			            {% if object.author == user %}
+			                <a class='btn-secondary btn-sm'href="{% url 'post-update' object.pk %}">Update</a>
+			                <a class='btn-danger btn-sm' href="{% url 'post-delete' object.pk %}">Delete</a>
+
+			            {% endif %}
+			            <hr style="margin: 0.3% 0;">
+			            <h3 style="color:rgba(0, 0, 0, 0.5);">{{object.title}}</h3>
+			            <p id="unique2">{{object.content}}</p>
+			           
+			        </div>
+			</article>
+		</div>
+		<div class="col-md-4">
+			                  
+			                  <div class="card" id="hide">
+			                    <div class="card-body">
+			                      <h4 class="card-title">Blog-Sidebar</h4>
+			                      <p class="card-text">You can put any information you like here</p>
+			                      <ul class="list-group ">
+			                        <li class="list-group-item list-group-item-flush">Latest Post</li>
+			                        <li class="list-group-item">Announcement</li>
+			                        <li class="list-group-item">Calendar</li>
+			                        <li class="list-group-item">Etc</li>
+			                      </ul>
+			                    </div> 
+			                  </div>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}.

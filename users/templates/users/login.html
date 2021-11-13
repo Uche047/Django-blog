@@ -1,0 +1,42 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="box-element">
+				<form method="POST">
+					{% csrf_token %}
+					<fieldset class="form-group">
+						<legend>Log In</legend>
+						{{form|crispy}}
+					</fieldset>
+					<div>
+						<button type="submit" class=" btn btn-outline-info">Log In</button>
+						<hr>
+						<small>New here? <a  class="ml-2" href="{% url 'users-register' %}">Sign Up</a></small>
+					</div>
+
+				</form>
+				
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card" id="hide">
+				<div class="card-body">
+					<h4 class="card-title">Blog-Sidebar</h4>
+					 <p class="card-text">You can put any information you like here</p>
+					    <ul class="list-group ">
+					    	<li class="list-group-item list-group-item-flush">Latest Post</li>
+					        <li class="list-group-item">Announcement</li>
+					        <li class="list-group-item">Calendar</li>
+					        <li class="list-group-item">Etc</li>
+					    </ul>
+				</div> 
+			</div>	                  
+		</div>
+	</div>
+</div>	
+	
+{% endblock content %}

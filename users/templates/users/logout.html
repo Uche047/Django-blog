@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<div class="box-element">
+		
+		<fieldset class="form-group">
+			<legend class="alert alert-danger">You have now been logged out !!</legend>
+				
+		</fieldset>
+		<div>
+			<a href="{% url 'login' %}" ><button type="submit" class=" btn btn-outline-info">Log In Again</button></a>
+		</div>
+
+		
+	</div>
+	
+{% endblock content %}
